@@ -5,4 +5,12 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   
   has_one :wishlist
+  
+  after_create :create_wishlist
+  
+  private
+    def create_wishlist
+      wishlist = Wishlist.new(user_id: self.id)
+      wishlist.save
+    end
 end
