@@ -8,7 +8,7 @@
   = @wishlist_item.link
 %p
   %b Wishlist:
-  = @wishlist_item.wishlist
+  = @wishlist_item.wishlist.id
 
 = link_to 'Edit', edit_wishlist_item_path(@wishlist_item)
 \|

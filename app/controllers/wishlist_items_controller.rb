@@ -14,7 +14,7 @@ class WishlistItemsController < ApplicationController
 
   # GET /wishlist_items/new
   def new
-    @wishlist_item = WishlistItem.new
+    @wishlist_item = WishlistItem.new(wishlist_id: params[:wishlist_id])
   end
 
   # GET /wishlist_items/1/edit
