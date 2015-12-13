@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151210030019) do
+ActiveRecord::Schema.define(version: 20151213052553) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,7 +43,6 @@ ActiveRecord::Schema.define(version: 20151210030019) do
 
   create_table "wishlists", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
