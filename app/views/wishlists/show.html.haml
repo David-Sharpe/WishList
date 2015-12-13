@@ -2,11 +2,25 @@
 
 %p
   %b User:
-  = @wishlist.user
+  = @wishlist.user.id
 %p
   %b Count:
   = @wishlist.count
+  
+%table
+  %thead 
+    %tr
+      %th Items
+      
+  %tbody
+    - @wishlist.wishlist_items.each do |item|
+      %tr
+        - if item.link.blank?
+          %td= item.name
+        - else
+          %td= link_to(item.name, item.link)
 
+%br
 = link_to 'Edit', edit_wishlist_path(@wishlist)
 \|
 = link_to 'Back', wishlists_path

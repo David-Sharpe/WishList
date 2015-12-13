@@ -1,4 +1,5 @@
 class WishlistsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_wishlist, only: [:show, :edit, :update, :destroy]
 
   # GET /wishlists
@@ -19,6 +20,7 @@ class WishlistsController < ApplicationController
 
   # GET /wishlists/1/edit
   def edit
+    # @wishlist = Wishlist.where(user_id: current_user.id)
   end
 
   # POST /wishlists

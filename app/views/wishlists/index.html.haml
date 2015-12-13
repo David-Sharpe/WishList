@@ -8,16 +8,18 @@
       %th
       %th
       %th
+      %th
 
   %tbody
     - @wishlists.each do |wishlist|
       %tr
-        %td= wishlist.user
+        %td= wishlist.user.email
         %td= wishlist.count
         %td= link_to 'Show', wishlist
-        %td= link_to 'Edit', edit_wishlist_path(wishlist)
-        %td= link_to 'Destroy', wishlist, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Wishlist', new_wishlist_path
+        %td
+          = link_to 'Edit', edit_wishlist_path(wishlist) if current_user.id == wishlist.user_id
+        %td
+          = link_to 'Destroy', wishlist, :method => :delete, :data => { :confirm => 'Are you sure?' } if current_user.id == wishlist.user_id
+      -wishlist.wishlist_items.each do |item|
+        %tr
+          %td= item.name
