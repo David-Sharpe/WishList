@@ -1,12 +1,6 @@
 class WishlistItemsController < ApplicationController
   before_action :set_wishlist_item, only: [:show, :edit, :update, :destroy]
 
-  # GET /wishlist_items
-  # GET /wishlist_items.json
-  def index
-    @wishlist_items = WishlistItem.all
-  end
-
   # GET /wishlist_items/1
   # GET /wishlist_items/1.json
   def show
@@ -62,13 +56,15 @@ class WishlistItemsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_wishlist_item
-      @wishlist_item = WishlistItem.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def wishlist_item_params
-      params.require(:wishlist_item).permit(:name, :link, :wishlist_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_wishlist_item
+    @wishlist_item = WishlistItem.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def wishlist_item_params
+    5/0
+    params.require(:wishlist_item).permit(:name, :link, :wishlist_id)
+  end
 end

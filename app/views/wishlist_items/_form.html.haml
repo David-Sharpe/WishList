@@ -12,8 +12,6 @@
   .field
     = f.label :link
     = f.text_field :link
-  .field
-    = f.label :wishlist
-    = f.text_field :wishlist_id
-  .actions
-    = f.submit 'Save'
+  = f.hidden_field(:wishlist_id, value: @wishlist_item.wishlist_id)
+  .actions 
+    %button{type: 'submit', class: 'button'} Save

@@ -3,14 +3,21 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  
+
   has_one :wishlist
-  
-  after_create :create_wishlist
-  
+  has_one :user_profile
+
+  after_create :create_wishlist, :create_profile
+
   private
-    def create_wishlist
-      wishlist = Wishlist.new(user_id: self.id)
-      wishlist.save
-    end
+
+  def create_wishlist
+    wishlist = Wishlist.new(user_id: id)
+    wishlist.save
+  end
+
+  def create_profile
+    profile = UserProfile.new(user_id: id)
+    profile.save
+  end
 end

@@ -38,4 +38,7 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.secret_key_base = '823u489iad'
+  config.secret_key_token = '18932u893u8932'
 end

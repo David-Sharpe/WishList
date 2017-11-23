@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
@@ -15,7 +14,10 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use devise for authentication
-gem 'devise'
+gem 'devise', '~> 4.3'
+
+# Use ZURB Foundation styles
+gem 'foundation-rails', '~> 6.4.1'
 
 # Use haml for views
 gem 'haml'
@@ -41,9 +43,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'better_errors', '~> 2.1'
   gem 'byebug'
   gem 'rspec-rails'
-  gem 'better_errors', '~> 2.1'
 end
 
 group :test do

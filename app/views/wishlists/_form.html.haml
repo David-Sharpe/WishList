@@ -17,4 +17,4 @@
     
   .actions
     = f.submit 'Save'
-    = link_to 'New item', new_wishlist_item_path(wishlist_id: @wishlist.id)
+    = link_to 'New item', new_wishlist_item_path(wishlist_id: @wishlist.id), class: 'button'

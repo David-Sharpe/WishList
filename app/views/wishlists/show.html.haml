@@ -21,6 +21,5 @@
           %td= link_to(item.name, item.link)
 
 %br
-= link_to 'Edit', edit_wishlist_path(@wishlist)
-\|
 = link_to 'Back', wishlists_path
+= link_to 'Add', new_wishlist_item_path(wishlist_id: @wishlist.id), class: 'button'
